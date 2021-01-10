@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { AreaComponent } from './widgets/area/area.component';
+import { MatInputModule } from '@angular/material/input';
 
 import { MatCardModule } from '@angular/material/card';
 
@@ -37,7 +38,9 @@ import { CardComponent } from './widgets/card/card.component';
     MatMenuModule,
     RouterModule,
     MatListModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatInputModule,
+    MatIconModule
   ],
   exports: [
     HeaderComponent,

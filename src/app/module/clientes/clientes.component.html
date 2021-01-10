@@ -1,0 +1,23 @@
+<mat-card fxFlex="50">
+    <h2>Cadastro Cliente</h2>
+    <form class="example-form" fxLayout="column">
+        <mat-form-field class=" example-full-width" fxFlex="60">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Nome do cliente">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>(91) &nbsp;</span>
+            <input type="number" matInput placeholder="555-555-1234">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+    </form>
+    <div fxLayoutGap='20'>
+        <button mat-raised-button color="primary" fxFlex="30">Salvar</button>
+        <button mat-raised-button color="warn" fxFlex="30">Cancelar</button>
+    </div>
+
+
+</mat-card>

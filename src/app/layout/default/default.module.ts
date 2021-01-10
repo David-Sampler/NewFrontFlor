@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout'
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule, MatSidenavModule, MatCardModule, FlexLayoutModule
+    SharedModule, MatSidenavModule, MatCardModule, FlexLayoutModule, MatInputModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

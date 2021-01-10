@@ -9,10 +9,17 @@ import { DefaultModule } from './layout/default/default.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatCardModule } from '@angular/material/card';
+import { VendasComponent } from './module/vendas/vendas.component';
+import { ClientesComponent } from './module/clientes/clientes.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
+    VendasComponent,
+    ClientesComponent,
 
 
   ],
@@ -23,7 +30,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     DefaultModule,
     FlexLayoutModule,
-    MatButtonModule, MatCardModule
+    MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatIconModule
   ],
 
   providers: [],
