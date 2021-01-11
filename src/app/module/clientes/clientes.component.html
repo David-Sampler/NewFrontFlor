@@ -1,23 +1,39 @@
 <mat-card fxFlex="50">
     <h2>Cadastro Cliente</h2>
-    <form class="example-form" fxLayout="column">
+    <form class="example-form" fxLayout="column" [formGroup]="form">
         <mat-form-field class=" example-full-width" fxFlex="60">
             <mat-label>Nome</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Nome do cliente">
+            <input matInput placeholder="Ex. Pizza" type="text" value="Nome do cliente" formControlName="nome">
         </mat-form-field>
 
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Telephone</mat-label>
-            <span matPrefix>(91) &nbsp;</span>
-            <input type="number" matInput placeholder="555-555-1234">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-        </mat-form-field>
+        <div class="example-full-width" formArrayName="contato">
+
+            <mat-icon (click)="add()" style=" float: right; margin-top: 20px;">add</mat-icon>
+
+            <mat-form-field *ngFor='let c of contato.controls;let i = index'>
+                <mat-label>Cell Phone</mat-label>
+                <input matInput placeholder="Placeholder" [formControlName]='i' style="margin: 5px;">
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-hint>Contato - {{i}}</mat-hint>
+            </mat-form-field>
+
+
+
+
+
+        </div>
+
+
+
     </form>
-    <div fxLayoutGap='20'>
-        <button mat-raised-button color="primary" fxFlex="30">Salvar</button>
-        <button mat-raised-button color="warn" fxFlex="30">Cancelar</button>
+    <br>
+    <div>
+        <button mat-raised-button color="primary" fxFlex="30" (click)="cadCliente()"
+            matTooltip="Por Favor Preencha o campo">Salvar</button>
+        <button mat-raised-button color="warn" fxFlex="30" matTooltip="Você limpará os campos">Cancelar</button>
     </div>
+
 
 
 </mat-card>

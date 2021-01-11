@@ -14,6 +14,9 @@ import { ClientesComponent } from './module/clientes/clientes.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,13 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     DefaultModule,
     FlexLayoutModule,
-    MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatIconModule
+    MatButtonModule, MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
 
   providers: [],
