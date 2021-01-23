@@ -13,11 +13,13 @@ import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { AreaComponent } from './widgets/area/area.component';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule,FormsModule, FormGroup, FormControl } from '@angular/forms';
 
 import { MatCardModule } from '@angular/material/card';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
+import { AuthGuardService } from '../guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { CardComponent } from './widgets/card/card.component';
     MatListModule,
     HighchartsChartModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,ReactiveFormsModule,FormsModule
+  
   ],
   exports: [
     HeaderComponent,
@@ -50,7 +53,7 @@ import { CardComponent } from './widgets/card/card.component';
     CardComponent
 
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [AuthGuardService]
 })
 export class SharedModule { }

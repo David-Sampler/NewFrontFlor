@@ -1,1 +1,77 @@
-<p>vendas works!</p>
+<mat-card fxFlex="60">
+    <h2>Cadastro vendas</h2>
+    <form class="example-form" fxLayout="column" [formGroup]="form">
+
+        <mat-form-field>
+            <mat-label>User</mat-label>
+            <mat-select name="food" formControlName="usuario">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Clientes</mat-label>
+            <mat-select name="food" formControlName="cliente">
+                <mat-option *ngFor="let c of clientes" [value]="c.nome">
+                    {{c.nome}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <div formArrayName="servico">
+
+            <mat-form-field class=" example-full-width" fxFlex="60">
+                <mat-label>Serviços</mat-label>
+                <input matInput placeholder="Ex. Pizza" type="text" value="servico" formControlName="tipo">
+            </mat-form-field>
+
+            <mat-form-field class=" example-full-width" fxFlex="30">
+                <mat-label>R$</mat-label>
+                <input matInput placeholder="Ex. Pizza" type="text" value="servico" formControlName="valor"
+                    type="number">
+                <mat-icon matSuffix (click)="addServicos()">add</mat-icon>
+            </mat-form-field>
+
+
+
+        </div>
+
+        <mat-radio-group aria-label="Select an option" formControlName="pagamento">
+            <mat-radio-button value="Cartão">Cartão</mat-radio-button>
+            <mat-radio-button value="Dinheiro">Dinheiro</mat-radio-button>
+        </mat-radio-group>
+    </form>
+
+    <br>
+
+
+
+    <div>
+        <button mat-raised-button color="primary" fxFlex="30" matTooltip="Por Favor Preencha o campo"
+            (click)="fazerVendas()">Salvar</button>
+        <button mat-raised-button color="warn" fxFlex="30" matTooltip="Você limpará os campos">Cancelar</button>
+    </div>
+
+
+
+</mat-card>
+
+<mat-card fxFlex="40" style="margin-left: 10px;" *ngIf="servFeitos.length>0">
+    <div >
+        <h2>Serviços Realizados</h2>
+
+        <mat-chip-list aria-label="Fish selection" *ngFor="let chip of servFeitos; let i = index">
+
+            <mat-chip color="primary" selected>{{i+1}}</mat-chip>
+            <mat-chip color="accent" selected>{{chip.tipo}}</mat-chip>
+            <mat-chip color="accent" selected>{{chip.valor}}</mat-chip>
+            <mat-icon  selected (click)="delservico(i)">delete</mat-icon>
+        </mat-chip-list>
+        <div style="position:absolute;bottom:0; padding-bottom: 20px;">
+            <mat-chip >Total:{{Total }}</mat-chip>
+        </div>
+
+    </div>
+</mat-card>

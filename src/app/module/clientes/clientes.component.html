@@ -13,18 +13,29 @@
 
             <mat-form-field *ngFor='let c of contato.controls;let i = index'>
                 <mat-label>Cell Phone</mat-label>
-                <input matInput placeholder="Placeholder" [formControlName]='i' style="margin: 5px;">
+                <input matInput placeholder="Placeholder" [formControlName]='i' style="margin: 5px;" mask="00 0 00000000">
                 <mat-icon matSuffix>phone</mat-icon>
                 <mat-hint>Contato - {{i}}</mat-hint>
             </mat-form-field>
 
+            <br>
 
-
+        
 
 
         </div>
+           
+        <br>
+        <mat-form-field class="example-full-width">
 
+            <mat-label>Nascimento</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="nascimento">
 
+            <mat-datepicker-toggle matSuffix [for]="picker" >
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
 
     </form>
     <br>

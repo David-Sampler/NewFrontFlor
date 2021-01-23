@@ -1,0 +1,29 @@
+<div class="principal">
+
+  <div class="menu animate__animated animate__fadeInLeft">
+
+    <img src="/assets/florlogo.png" alt="">
+    <form class="example-form"  [formGroup]='formulario' >
+      <mat-form-field class="example-full-width" appearance="outline" >
+        <mat-label>Name</mat-label>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <input matInput placeholder="Jessica" value="Fulano" formControlName='nome'>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName='password'>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="Logout()">Login</button>
+    <br>
+    <p style="text-align: center;bottom: 0;">Insira o nome e senha igual ao cadastrado</p>
+
+  </div>
+
+</div>

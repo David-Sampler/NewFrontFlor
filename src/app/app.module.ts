@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,19 +14,30 @@ import { ClientesComponent } from './module/clientes/clientes.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './guards/auth-guard.service';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
     VendasComponent,
     ClientesComponent,
-
+    LoginComponent,
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -39,9 +50,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     ReactiveFormsModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,   
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule,FormsModule,MatChipsModule,
+    ReactiveFormsModule,
+    MatDividerModule,
+    NgxMaskModule.forRoot()
   ],
-
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
