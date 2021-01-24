@@ -10,6 +10,7 @@ import { ServiceService } from '../service.service';
 })
 export class LoginComponent implements OnInit {
   hide = true;
+  contador = false
 
   formulario: any
 
@@ -29,11 +30,15 @@ export class LoginComponent implements OnInit {
     this.service.Login(this.formulario.value).subscribe((res) => {
 
       console.log(res)
-     
+
       if (res.token) {
-        localStorage.setItem('token', res.token)
-        this.router.navigate(['/default'])
-      } else {        
+        localStorage.setItem('token', res.token)       
+        this.contador = true
+        setTimeout(() => {
+          this.router.navigate(['/default'])
+        }, 4000)
+
+      } else {
         return this.service.msg("Nome ou Senha Inválido", "Atenção", "center")
       }
 

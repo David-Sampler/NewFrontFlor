@@ -27,6 +27,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { NgxMaskModule } from 'ngx-mask';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { NgxMaskModule } from 'ngx-mask';
     MatSelectModule,FormsModule,MatChipsModule,
     ReactiveFormsModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
     NgxMaskModule.forRoot()
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

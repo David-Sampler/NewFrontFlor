@@ -54,8 +54,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -132,5 +132,5 @@
   "defaultProject": "dashboardFlor",
   "cli": {
     "analytics": "8d6d1886-b3b0-4cb9-9077-2a74a6b46070"
-  }
+  },
 }

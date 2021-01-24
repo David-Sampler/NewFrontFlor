@@ -1,8 +1,12 @@
 <div class="principal">
-
-  <div class="menu animate__animated animate__fadeInLeft">
+  <div class="contador" *ngIf="contador">
+    <mat-spinner diameter="170"></mat-spinner>
+  </div>
+  
+  <div class="menu animate__animated animate__fadeInLeft"  *ngIf="!contador">
 
     <img src="/assets/florlogo.png" alt="">
+
     <form class="example-form"  [formGroup]='formulario' >
       <mat-form-field class="example-full-width" appearance="outline" >
         <mat-label>Name</mat-label>
@@ -27,3 +31,4 @@
   </div>
 
 </div>
+

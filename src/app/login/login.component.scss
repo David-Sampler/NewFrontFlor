@@ -38,6 +38,13 @@
     padding: 40px;
     
 }
+.contador{
+    width:100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+}
 
 
 
@@ -49,3 +56,9 @@ img{
     width: 200px;
 }
 
+@media screen and (max-width: 600px) {
+    .menu {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+  }
