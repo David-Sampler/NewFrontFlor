@@ -21,13 +21,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { NgxMaskModule } from 'ngx-mask';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {TokenInterceptorService} from '../app/guards/token-interceptor.service'
 
 @NgModule({
   declarations: [
@@ -62,7 +63,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NgxMaskModule.forRoot()
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

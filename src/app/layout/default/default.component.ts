@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-default',
@@ -9,13 +10,18 @@ export class DefaultComponent implements OnInit {
 
   sideBarOpen = true
 
-  constructor() { }
+  constructor(private server:ServiceService) { }
 
   ngOnInit(): void {
+    this.user()
   }
 
   sideBar() {
     this.sideBarOpen = !this.sideBarOpen
+  }
+
+  user(){
+    this.server.usuarioLogado().subscribe((res)=>console.log(res,"aqui"))
   }
 
 }

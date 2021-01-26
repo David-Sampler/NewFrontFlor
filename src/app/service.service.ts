@@ -13,8 +13,8 @@ import { Observable, ObservableLike } from 'rxjs';
 })
 
 export class ServiceService {
-
-  private url = 'http://localhost:3000'
+  private url = "https://decent-tracer-282620.nn.r.appspot.com"
+  //private url = 'http://localhost:3000'
 
   constructor(private _snackBar: MatSnackBar, private http:HttpClient) { 
 
@@ -39,6 +39,10 @@ export class ServiceService {
   Login(dados:any):Observable<any>{
 
         return this.http.post<any>(`${this.url}/login`,dados)
+  }
+
+  usuarioLogado():Observable<any>{
+    return this.http.get<any>(`${this.url}/logarUsuario`)
   }
 
   //vendas

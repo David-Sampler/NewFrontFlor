@@ -1,10 +1,10 @@
-<mat-card fxFlex="60">
+<mat-card fxFlex="50">
     <h2>Cadastro vendas</h2>
     <form class="example-form" fxLayout="column" [formGroup]="form">
 
         <mat-form-field>
             <mat-label>User</mat-label>
-            <mat-select name="food" formControlName="usuario">
+            <mat-select name="food" formControlName="usuario"> 
                 <mat-option *ngFor="let food of foods" [value]="food.value">
                     {{food.value}}
                 </mat-option>
@@ -34,11 +34,9 @@
                 <mat-icon matSuffix (click)="addServicos()">add</mat-icon>
             </mat-form-field>
 
-
-
         </div>
 
-        <mat-radio-group aria-label="Select an option" formControlName="pagamento">
+        <mat-radio-group aria-label="Select an option" formControlName="pagamento" >
             <mat-radio-button value="Cartão">Cartão</mat-radio-button>
             <mat-radio-button value="Dinheiro">Dinheiro</mat-radio-button>
         </mat-radio-group>
@@ -46,15 +44,11 @@
 
     <br>
 
-
-
     <div>
-        <button mat-raised-button color="primary" fxFlex="30" matTooltip="Por Favor Preencha o campo"
-            (click)="fazerVendas()">Salvar</button>
-        <button mat-raised-button color="warn" fxFlex="30" matTooltip="Você limpará os campos">Cancelar</button>
+        <button mat-raised-button color="primary" fxFlex="30" matTooltip="Por Favor Preencha o campo" 
+            (click)="fazerVendas()" [disabled]="servFeitos>-1">Salvar</button>
+        <button mat-raised-button color="warn" fxFlex="30" matTooltip="Você limpará os campos"(click)="limparCampos()">Cancelar</button>
     </div>
-
-
 
 </mat-card>
 
