@@ -13,15 +13,12 @@ export class DefaultComponent implements OnInit {
   constructor(private server:ServiceService) { }
 
   ngOnInit(): void {
-    this.user()
   }
 
   sideBar() {
     this.sideBarOpen = !this.sideBarOpen
   }
 
-  user(){
-    this.server.usuarioLogado().subscribe((res)=>console.log(res,"aqui"))
-  }
+  
 
 }

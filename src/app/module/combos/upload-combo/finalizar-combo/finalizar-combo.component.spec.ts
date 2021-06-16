@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { FinalizarComboComponent } from './finalizar-combo.component';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('FinalizarComboComponent', () => {
+  let component: FinalizarComboComponent;
+  let fixture: ComponentFixture<FinalizarComboComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ FinalizarComboComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(FinalizarComboComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

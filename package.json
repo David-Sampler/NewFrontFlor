@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.5",
@@ -28,6 +27,7 @@
     "highcharts": "^8.2.2",
     "highcharts-angular": "^2.9.0",
     "ngx-mask": "^11.1.4",
+    "pdfmake": "^0.1.70",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

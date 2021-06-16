@@ -26,7 +26,6 @@ export class ClientesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.form)
   }
 
   get contato() {
@@ -39,18 +38,18 @@ export class ClientesComponent implements OnInit {
 
 
   cadCliente() {
-    
+    if (this.form.value.nome == "" || this.form.value.telefone == "") {
       console.log(this.form.value)
       this.ms.msg("Você precisa preencher os campos", "VALEU", "start")
 
-     
+    } else {
       this.ms.postCli(this.form.value).subscribe((res)=>{
         console.log(res)
       })
       console.log(this.form.value)
       this.ms.msg("CADASTRO REALIZADO", "SUCESSO", "end")
       this.form.reset()
-    
+    }
   }
 
   

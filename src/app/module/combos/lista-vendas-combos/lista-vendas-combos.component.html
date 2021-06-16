@@ -1,0 +1,48 @@
+
+
+<div [formGroup]='formulario' style="display: flex; justify-content: center; align-items: center;">
+    <mat-form-field appearance="legacy" style="width: 80%;" >
+
+        <mat-label>Localize Cliente</mat-label>
+        <input matInput placeholder="Pesquise aqui" formControlName="cliente"  >
+
+
+    </mat-form-field>
+   
+    <button mat-raised-button color="warn" style="width: 20%; margin-left: 20px;"  (keyup.enter) ="filtro()" (click)='filtro()'>Pesquise </button>
+
+</div>
+
+<div *ngFor="let c of lista  ; let i= index" style="margin-top: 15px;">
+    <div class="content" >
+      
+        <table class="rTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th style="background-color: rgb(117, 136, 139);" >Nome</th>
+                    <th>Telefone</th>
+                    <th style="background-color: rgb(71, 42, 150);">Total</th>
+                    <th style="background-color: rgb(255, 0, 64);">Devedor</th>
+
+                    
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td><a style="color: white; text-decoration: none;" (click)=veUser(c._id)>{{c.cliente}}</a></td>
+                    <td>{{c.contato}}</td>
+                    <td>R$ {{c.valorTotal}}</td>
+                    <td style="background-color: brown; padding: 5px; color: white;">R$ {{c.valorDevedor}}</td>
+                    
+                </tr>
+    
+             
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>

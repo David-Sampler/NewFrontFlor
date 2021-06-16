@@ -1,0 +1,13 @@
+<h1 mat-dialog-title style="text-align: center; font-weight: bold;">Deseja finalizar compra de {{cliente.cliente}}?</h1>
+<div mat-dialog-content >O Valor de débito é de R$ {{cliente.valorDevedor}} </div>
+
+<mat-form-field style="margin-top: 10px;" [formGroup]=form>
+    <mat-label>R$</mat-label>
+    <input matInput mask="separator.2" formControlName="valor" >
+
+</mat-form-field>
+
+<div mat-dialog-actions>
+    <button mat-flat-button color="warn" (click)="atualizar()">Finalizar</button>
+</div>
+

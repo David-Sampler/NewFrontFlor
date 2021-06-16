@@ -1,4 +1,4 @@
-<mat-card fxFlex="50">
+<mat-card>
     <h2>Cadastro vendas</h2>
     <form class="example-form" fxLayout="column" [formGroup]="form">
 
@@ -28,15 +28,15 @@
             </mat-form-field>
 
             <mat-form-field class=" example-full-width" fxFlex="30">
-                <mat-label>R$</mat-label>
-                <input matInput placeholder="Ex. Pizza" type="text" value="servico" formControlName="valor"
-                    type="number">
+                <mat-label>Valor</mat-label>
+                <input matInput type="text" value="servico" formControlName="valor"   mask="separator.2">
+                <span matPrefix>R$&nbsp;</span>               
                 <mat-icon matSuffix (click)="addServicos()">add</mat-icon>
             </mat-form-field>
 
         </div>
 
-        <mat-radio-group aria-label="Select an option" formControlName="pagamento" >
+        <mat-radio-group aria-label="Select an option" formControlName="pagamento">
             <mat-radio-button value="Cartão">Cartão</mat-radio-button>
             <mat-radio-button value="Dinheiro">Dinheiro</mat-radio-button>
         </mat-radio-group>
@@ -52,7 +52,7 @@
 
 </mat-card>
 
-<mat-card fxFlex="40" style="margin-left: 10px;" *ngIf="servFeitos.length>0">
+<mat-card fxFlex="30" style="margin-left: 10px;" *ngIf="servFeitos.length>0">
     <div >
         <h2>Serviços Realizados</h2>
 

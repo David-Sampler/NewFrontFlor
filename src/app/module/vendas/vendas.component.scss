@@ -19,3 +19,13 @@
   .mat-radio-button ~ .mat-radio-button {
     margin-left: 16px;
   }
+
+  .mat-card{
+    width: 50%;
+  }
+
+  @media screen and (max-width: 600px){
+    .mat-card{      
+      width: 40vh;
+    }
+  }

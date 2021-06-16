@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   Logout() {
 
-
     this.service.Login(this.formulario.value).subscribe((res) => {
 
       console.log(res)

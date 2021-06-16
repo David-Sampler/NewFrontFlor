@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-slidebar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlidebarComponent implements OnInit {
 
-  constructor() { }
+  public logado:any
+  obj:any
+  constructor(private service:ServiceService) { 
+
+  }
 
   ngOnInit(): void {
+      this.allUser()
+  }
+ 
+  allUser(){
+    this.service.usuarioLogado().subscribe((res)=>{
+      this.obj = res
+      this.logado = res.permissoes
+    })
   }
 
 }

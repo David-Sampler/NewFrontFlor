@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServiceService } from 'src/app/service.service';
-
 @Component({
   selector: 'app-vendas',
   templateUrl: './vendas.component.html',
@@ -87,7 +86,6 @@ export class VendasComponent implements OnInit {
 
   fazerVendas() {
     
-
     let data2 = new Date(this.data.valueOf() - this.data.getTimezoneOffset() * 60000);
     var dataBase = data2.toISOString().replace(/\.\d{3}Z$/, '');
 

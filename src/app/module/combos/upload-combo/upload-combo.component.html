@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Nome: {{cliente.cliente}}
+                </mat-panel-title>
+                <mat-panel-description style="display: flex; justify-content: space-between; ">
+                    <p>Valor Total: R$ {{cliente.valorTotal}}</p>
+                    <p>Valor Entrada: R$ {{cliente.valorEntrada}}</p>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip color="primary" selected>Débito: R$ {{cliente.valorDevedor}}</mat-chip>
+
+            </mat-chip-list>
+
+
+        </mat-expansion-panel>
+      
+<br>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Para finaliza a compra é só clica aqui
+                </mat-panel-title>
+                <mat-panel-description>
+                    
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div style="display: flex; margin-top: 10px;">
+                <app-finalizar-combo [cliente]=cliente></app-finalizar-combo>
+            </div>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+</mat-card>
+

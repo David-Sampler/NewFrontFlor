@@ -1,29 +1,27 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h1>Nome</h1>
-            <H4>Tipo</H4>
+            <h1>{{obj.nome}}</h1>
+            <H4>Sexo</H4>
         </div>
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
+        <img src="assets/avatar.png" alt="">
     </div>
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader class="bg">Pages</h2>
+    <h2 matSubheader class="bg">Paginas</h2>
 
-    <a mat-list-item routerLinkActive='list-item-active' routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive='list-item-active' routerLink="/posts">Posts</a>
-    <a mat-list-item routerLinkActive='list-item-active' routerLink="/default/clientes">Clientes</a>
-    <a mat-list-item routerLinkActive='list-item-active' routerLink="/default/vendas">Vendas</a>
+    <div *ngFor="let cli of logado" style="display: flex;">
+        <a mat-list-item routerLinkActive='list-item-active' 
+        [routerLink]="cli.rota"> <span class="material-icons" style="margin-right: 20px;">{{cli.icon}}</span>{{cli.nome}} </a>
 
-    <h2 matSubheader class="bg">Contatos</h2>
 
-    <a mat-list-item routerLinkActive='list-item-active' routerLink="/contatos">
-        <mat-icon>import_contacts</mat-icon> Contatos
-    </a>
 
-    <a mat-list-item routerLinkActive='list-item-active' routerLink="/contatos">
-        <mat-icon>contact_phone</mat-icon> Telefones
-    </a>
+    </div>
+
+
+
+
+
 
 </mat-nav-list>
