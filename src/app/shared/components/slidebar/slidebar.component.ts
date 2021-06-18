@@ -20,7 +20,7 @@ export class SlidebarComponent implements OnInit {
  
   allUser(){
     this.service.usuarioLogado().subscribe((res)=>{
-      this.obj = res
+      this.obj = res.nome
       this.logado = res.permissoes
     })
   }

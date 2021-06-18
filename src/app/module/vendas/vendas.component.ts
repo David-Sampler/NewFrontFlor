@@ -20,6 +20,7 @@ export class VendasComponent implements OnInit {
   form: any
   pagamentos: any = "Dinheiro"
   clientes: any
+  listaCli:any
   Total: any = 0
   servFeitos: any = []
 
@@ -29,7 +30,7 @@ export class VendasComponent implements OnInit {
     { value: 'LUZIELE' },
     { value: 'CARLA' },
     { value: 'MAYARA' },
-    { value: 'ANA PAULA' },
+    { value: 'LILI' },
 
   ];
 
@@ -66,7 +67,13 @@ export class VendasComponent implements OnInit {
   getCli() {
     this.service.getCliente().subscribe((res) => {
       this.clientes = res
-      console.log(res)
+      let dado:any = []
+      this.clientes.filter((result:any)=>{
+        dado.push(result.nome)     
+      }
+   
+      )
+      this.listaCli = dado.sort()
     })
   }
 

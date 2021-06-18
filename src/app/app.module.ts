@@ -40,6 +40,7 @@ import { UploadComboComponent } from './module/combos/upload-combo/upload-combo.
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FinalizarComboComponent } from './module/combos/upload-combo/finalizar-combo/finalizar-combo.component';
 import { MatDialogRef} from '@angular/material/dialog';
+import { ListaclientesBronzeComponent } from './module/venda-bronze/listaclientes-bronze/listaclientes-bronze.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MatDialogRef} from '@angular/material/dialog';
     ListaVendasCombosComponent,
     UploadComboComponent,
     FinalizarComboComponent,
+    ListaclientesBronzeComponent,
     
   ],
   imports: [

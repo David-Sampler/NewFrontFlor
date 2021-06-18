@@ -1,20 +1,7 @@
+<div *ngFor='let user of logado'>
+    <mat-card style="display: flex; justify-content: end; align-items: center;" [routerLink]='user.rota' >
+        <span class="material-icons" style="margin-right: 20px;"  >{{user.icon}}</span> 
+       <h2>{{user.nome}}</h2> 
+    </mat-card>
 
-<mat-divider></mat-divider>
-
-<br>
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="30px" class="starts-cards">
-    <mat-card fxFlex='25'>
-        <app-card>Login</app-card>
-    </mat-card>
-    <mat-card fxFlex='25'>
-        <app-card>Login</app-card>
-    </mat-card>
-    <mat-card fxFlex='25'>
-        <app-card>Login</app-card>
-    </mat-card>
-    <mat-card fxFlex='25'>
-        <app-card>Login</app-card>
-    </mat-card>
 </div>
-
-<mat-divider></mat-divider>

@@ -13,8 +13,8 @@
         <mat-form-field>
             <mat-label>Clientes</mat-label>
             <mat-select name="food" formControlName="cliente">
-                <mat-option *ngFor="let c of clientes" [value]="c.nome">
-                    {{c.nome}}
+                <mat-option *ngFor="let c of listaCli" [value]="c.nome">
+                    {{c}}
                 </mat-option>
             </mat-select>
         </mat-form-field>

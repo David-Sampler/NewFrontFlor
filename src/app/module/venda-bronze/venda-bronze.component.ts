@@ -4,7 +4,7 @@ import { filter, map } from 'rxjs/operators'
 import { pipe, from, } from 'rxjs';
 import { ServiceService } from 'src/app/service.service';
 import { MatAccordion } from '@angular/material/expansion';
-
+import {ListaclientesBronzeComponent} from '../venda-bronze/listaclientes-bronze/listaclientes-bronze.component'
 
 @Component({
   selector: 'app-venda-bronze',
@@ -24,7 +24,7 @@ export class VendaBronzeComponent implements OnInit {
   favoriteSeason: any;
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
 
-  totaldoDia: any = []
+  totaldoDia:Array<any>=[]
   totaldebronzeHoje = 0
   totalBronzeMes: any = []
   ar: any = []
@@ -42,36 +42,13 @@ export class VendaBronzeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.buscarTodosBronze()
-    this.TodosDoDia()
+    this.buscarTodosBronzeMes()
     this.PegarTodosMesAtual()
-    
-  }
-
-  TodosDoDia() {
-
-    this.service.allbronze().subscribe(res => {
-
-      res.filter((resultado: any) => {
-        if (resultado.criado == this.data()) {
-          //this.totaldebronzeHoje.push(resultado)
-        }
-      })
-
-
-
-    });
-
-
 
   }
-
-
-
   PegarTodosMesAtual() {
     this.service.allbronze().subscribe((res) => {
       let todos = res
-      console.log(this.datahoje)
       todos.filter((resultante: any) => {
         if (this.datahoje === resultante.criado.split('T')[0].split('-')[1]) {
           this.totalBronzeMes.push(resultante)
@@ -81,7 +58,7 @@ export class VendaBronzeComponent implements OnInit {
   }
 
 
-  buscarTodosBronze() {
+  buscarTodosBronzeMes() {
     this.service.allbronze().subscribe((res) => {
 
       res.filter((element: any) => {
@@ -94,11 +71,8 @@ export class VendaBronzeComponent implements OnInit {
 
           this.totaldebronzeHoje += element.valor
           this.numerosDeBronze = this.totaldoDia.length
-          //console.log(this.totaldoDia.length)
 
-        } else {
-          this.totaldoDia = 0
-        }
+        } 
       });
     })
 
@@ -130,6 +104,10 @@ export class VendaBronzeComponent implements OnInit {
     this.service.filterBronze(this.form.value.cliente).subscribe((res) => {
       console.log(res)
     })
+  }
+
+  buscarcli(){
+   this.service.openDialog(ListaclientesBronzeComponent)
   }
 }
 

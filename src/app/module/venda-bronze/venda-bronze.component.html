@@ -1,16 +1,15 @@
+<mat-card style="background-color: rgb(50, 51, 53);">
+  <h2>Cadastro vendas de Bronze</h2>
 
-  <mat-card style="background-color: rgb(50, 51, 53);">
-    <h2>Cadastro vendas de Bronze</h2>
+</mat-card>
 
-  </mat-card>
 
-  
-  <div style="display: flex;">
+<div style="display: flex;">
 
 
   <mat-card style="margin-top: 20px; width: 60%; ">
-    <form class="example-form" style="display: flex; flex-direction: column" [formGroup]="form" >
-      
+    <form class="example-form" style="display: flex; flex-direction: column" [formGroup]="form">
+
       <mat-form-field class="example-full-width">
         <mat-label>Nome</mat-label>
         <input matInput placeholder="Ex. Pizza" value="cliente" formControlName="cliente">
@@ -22,34 +21,36 @@
 
         <mat-label>Cell Phone</mat-label>
 
-        <input matInput placeholder="Placeholder" type="text" style="margin: 5px;" mask="(00) 0 0000 0000" formControlName="contato">
+        <input matInput placeholder="Placeholder" type="text" style="margin: 5px;" mask="(00) 0 0000 0000"
+          formControlName="contato">
         <mat-icon matSuffix>phone</mat-icon>
 
       </mat-form-field>
 
       <mat-form-field class=" example-full-width">
         <mat-label>Valor</mat-label>
-        <input matInput type="text" formControlName="valor"  mask="separator.2">
+        <input matInput type="text" formControlName="valor" mask="separator.2">
         <span matPrefix>R$&nbsp;</span>
         <mat-icon matSuffix>money</mat-icon>
 
       </mat-form-field>
 
       <mat-radio-group formControlName="pagamento" style="margin-bottom: 20px;">
-        <mat-radio-button  value="Cartão"  >Cartão</mat-radio-button>
-        <mat-radio-button style="margin-left: 10px;" value="Dinheiro" >Dinheiro</mat-radio-button>
+        <mat-radio-button value="Cartão">Cartão</mat-radio-button>
+        <mat-radio-button style="margin-left: 10px;" value="Dinheiro">Dinheiro</mat-radio-button>
       </mat-radio-group>
     </form>
 
-  
-     
-  
+
+
+
     <button mat-raised-button color="warn" (click)="cadastraservico()" [disabled]="!form.valid">Salvar</button>
 
 
   </mat-card>
 
-  <mat-card  style="margin-top: 20px; margin-left: 10px; width: 20%; display: flex; align-items: center; flex-direction: column; justify-content: center;" >
+  <mat-card
+    style="margin-top: 20px; margin-left: 10px; width: 20%; display: flex; align-items: center; flex-direction: column; justify-content: center;">
     <h4>Estamos no Mês {{datahoje}}</h4>
     <h2>Total de Hoje: {{numerosDeBronze }}</h2>
     <h3>Total do dia R$ {{totaldebronzeHoje}}</h3>
@@ -59,8 +60,20 @@
 
 </div>
 
-<mat-card  style="margin-top: 20px; width: 20%; display: flex; align-items: center; flex-direction: column; justify-content: center;" >
- 
-  <h4>Realizados no Mês {{totalBronzeMes.length}}</h4>  
+<mat-card
+  style="margin-top: 20px; width: 20%; display: flex; align-items: center; flex-direction: column; justify-content: center;">
+
+  <h4>Realizados no Mês {{totalBronzeMes.length}}</h4>
 </mat-card>
+
+<mat-card
+  style="margin-top: 20px; width: 20%; display: flex; align-items: center; flex-direction: column; justify-content: center;">
+   
+  <button mat-raised-button color="warn" style="width:200px; " (click)="buscarcli()" >Verifica cliente</button>
+</mat-card>
+
+
+
+
+
 

@@ -1,19 +1,18 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h1>{{obj.nome}}</h1>
+            <h1>{{obj}}</h1>
             <H4>Sexo</H4>
         </div>
-        <img src="assets/avatar.png" alt="">
+        <img src="assets/May.jpg" alt="">
     </div>
 
-    <mat-divider></mat-divider>
 
     <h2 matSubheader class="bg">Paginas</h2>
 
     <div *ngFor="let cli of logado" style="display: flex;">
-        <a mat-list-item routerLinkActive='list-item-active' 
-        [routerLink]="cli.rota"> <span class="material-icons" style="margin-right: 20px;">{{cli.icon}}</span>{{cli.nome}} </a>
+        <a mat-list-item routerLinkActive='list-item-active' [routerLink]="cli.rota"> <span class="material-icons"
+                style="margin-right: 20px;">{{cli.icon}}</span>{{cli.nome}} </a>
 
 
 
