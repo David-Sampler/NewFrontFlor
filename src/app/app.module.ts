@@ -41,6 +41,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FinalizarComboComponent } from './module/combos/upload-combo/finalizar-combo/finalizar-combo.component';
 import { MatDialogRef} from '@angular/material/dialog';
 import { ListaclientesBronzeComponent } from './module/venda-bronze/listaclientes-bronze/listaclientes-bronze.component';
+import { DetalhesVendasComponent } from './module/vendas/detalhes-vendas/detalhes-vendas.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ListaclientesBronzeComponent } from './module/venda-bronze/listacliente
     UploadComboComponent,
     FinalizarComboComponent,
     ListaclientesBronzeComponent,
+    DetalhesVendasComponent,
     
   ],
   imports: [

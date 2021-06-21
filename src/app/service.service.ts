@@ -52,6 +52,11 @@ export class ServiceService {
     return this.http.post<any>(`${this.url}/insertvendas`, dados)
   }
 
+  AllVendas():Observable<any>{
+   return this.http.get<any>(`${this.url}/allvendas`)
+
+  }
+
   msg(message: string, action: string, horizontalPosition: MatSnackBarHorizontalPosition) {
     this._snackBar.open(message, action, {
       duration: 4000,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServiceService } from 'src/app/service.service';
+import { DetalhesVendasComponent } from './detalhes-vendas/detalhes-vendas.component'
 @Component({
   selector: 'app-vendas',
   templateUrl: './vendas.component.html',
@@ -20,7 +21,7 @@ export class VendasComponent implements OnInit {
   form: any
   pagamentos: any = "Dinheiro"
   clientes: any
-  listaCli:any
+  listaCli: any
   Total: any = 0
   servFeitos: any = []
 
@@ -37,7 +38,7 @@ export class VendasComponent implements OnInit {
   constructor(private formulario: FormBuilder, private service: ServiceService,) {
     this.form = this.formulario.group({
       usuario: ['', Validators.required],
-      cliente: ['', Validators.required],
+      cliente: ['ANÔNIMO', Validators.required],
       servico: this.formulario.group({
         tipo: ['', Validators.required],
         valor: ['', Validators.required]
@@ -49,6 +50,7 @@ export class VendasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCli()
+
   }
 
   getFormulario() {
@@ -60,30 +62,41 @@ export class VendasComponent implements OnInit {
         valor: ['', Validators.required]
       }),
       valor: ['', Validators.required],
-      
+
     })
   }
 
   getCli() {
     this.service.getCliente().subscribe((res) => {
       this.clientes = res
-      let dado:any = []
-      this.clientes.filter((result:any)=>{
-        dado.push(result.nome)     
+      let dado: any = []
+      this.clientes.filter((result: any) => {
+        dado.push(result.nome)
       }
-   
+
       )
       this.listaCli = dado.sort()
     })
   }
 
   addServicos() {
+    console.log(this.form.value)
 
-    let serv = this.form.value.servico
-    this.servFeitos.push(serv)
-    this.Total += parseInt(serv.valor)
+    if (this.form.value.servico.valor === "") {
+      this.service.msg('Você precisa adicionar o valor e o serviço', "Faço isso", 'right')
+    }
+    if (this.form.value.servico.tipo === "") {
+      this.service.msg('Você precisa adicionar o valor e o serviço', "Faço isso", 'right')
+    }
 
-    console.log(this.Total)
+    else {
+      let serv = this.form.value.servico
+      this.servFeitos.push(serv)
+      this.Total += parseInt(serv.valor)
+      console.log(this.Total)
+    }
+
+
 
   }
   delservico(index: any) {
@@ -92,19 +105,19 @@ export class VendasComponent implements OnInit {
   }
 
   fazerVendas() {
-    
+
     let data2 = new Date(this.data.valueOf() - this.data.getTimezoneOffset() * 60000);
     var dataBase = data2.toISOString().replace(/\.\d{3}Z$/, '');
 
     let dados = dataBase.split("T")
     let data = dados[0].split("-").reverse().join('-')
     let hora = dados[1]
-    
-    
+
+
 
     let formulario = {
       usuario: this.form.value.usuario,
-      cliente: this.form.value.cliente,
+      cliente: { nome: this.form.value.cliente },
       servico: this.servFeitos,
       totalVenda: this.Total,
       pagamento: this.form.value.pagamento,
@@ -113,7 +126,8 @@ export class VendasComponent implements OnInit {
         hora: hora
       }
     }
-    console.log(this.form.value.usuario)
+    console.log(formulario)
+
 
 
     this.service.Insertvendas(formulario).subscribe((res) => console.log(res))
@@ -126,9 +140,12 @@ export class VendasComponent implements OnInit {
     this.form.reset()
     this.servFeitos = []
     this.Total = 0
-   
+
   }
-  
 
 
+  todosVendas() {
+    this.service.openDialog(DetalhesVendasComponent)
+
+  }
 }

@@ -1,5 +1,10 @@
-<mat-card>
+<div>
+
+
+<mat-card>   
     <h2>Cadastro vendas</h2>
+    <mat-card-title>Relacionado a Estética</mat-card-title>
+    
     <form class="example-form" fxLayout="column" [formGroup]="form">
 
         <mat-form-field>
@@ -13,7 +18,7 @@
         <mat-form-field>
             <mat-label>Clientes</mat-label>
             <mat-select name="food" formControlName="cliente">
-                <mat-option *ngFor="let c of listaCli" [value]="c.nome">
+                <mat-option *ngFor="let c of listaCli" [value]="c">
                     {{c}}
                 </mat-option>
             </mat-select>
@@ -31,7 +36,7 @@
                 <mat-label>Valor</mat-label>
                 <input matInput type="text" value="servico" formControlName="valor"   mask="separator.2">
                 <span matPrefix>R$&nbsp;</span>               
-                <mat-icon matSuffix (click)="addServicos()">add</mat-icon>
+                <mat-icon matSuffix (click)="addServicos()"  >add</mat-icon>
             </mat-form-field>
 
         </div>
@@ -52,10 +57,12 @@
 
 </mat-card>
 
+
 <mat-card fxFlex="30" style="margin-left: 10px;" *ngIf="servFeitos.length>0">
+   
     <div >
         <h2>Serviços Realizados</h2>
-
+        
         <mat-chip-list aria-label="Fish selection" *ngFor="let chip of servFeitos; let i = index">
 
             <mat-chip color="primary" selected>{{i+1}}</mat-chip>
@@ -68,4 +75,14 @@
         </div>
 
     </div>
+  
 </mat-card>
+
+
+
+
+</div>
+
+<div style="margin: 10px 15px; ">
+    <button mat-raised-button color="primary" fxFlex="40" matTooltip="Lista vendas" style="padding: 5px;" (click)="todosVendas()" >Vendas</button>
+</div>
