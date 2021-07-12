@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar >
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
         (click)="toggleSideBar()">
         <mat-icon>menu</mat-icon>
@@ -6,7 +6,7 @@
 
     <span>FlordeMacaruja</span>
 
-    <div fxFlex fxLayout="row" fxLayoutAlign="end">
+    <div fxFlex fxLayout="row" fxLayoutAlign="end" >
         <ul fxLayout="row" fxLayoutGap="20px">
             <li>
                 <button mat-icon-button class="example-icon favorite-icon"
@@ -24,9 +24,9 @@
                 <button mat-button [matMenuTriggerFor]="menu">
                     <mat-icon>person_outline</mat-icon>
                 </button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                        <mat-icon (click)="sair()">exit_to_app</mat-icon>
+                <mat-menu #menu="matMenu" >
+                    <button mat-menu-item  (click)="sair()">
+                        <mat-icon>exit_to_app</mat-icon>
                         Sair
                     </button>
 

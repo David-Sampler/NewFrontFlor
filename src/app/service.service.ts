@@ -92,7 +92,7 @@ export class ServiceService {
   }
 
   openDialog(view: any) {
-    let dialogRef = this.dialog.open(view, { width: '60%' })
+    let dialogRef = this.dialog.open(view, { width: '80%' })
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
 

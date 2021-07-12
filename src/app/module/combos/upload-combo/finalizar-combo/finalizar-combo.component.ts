@@ -19,7 +19,7 @@ export class FinalizarComboComponent implements OnInit {
   constructor(private formBuild:FormBuilder, private dialogRef: MatDialogRef<FinalizarComboComponent>,
      private service: ServiceService, private route: ActivatedRoute, private router:Router) {
        this.form = formBuild.group({
-         valor:["",Validators.required]
+         valor:[0,Validators.required]
        })
 
    }

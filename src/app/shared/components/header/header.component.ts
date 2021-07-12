@@ -24,8 +24,9 @@ export class HeaderComponent implements OnInit {
 
   sair(){ 
     this.router.navigate(['/'])
+    
     localStorage.clear();
-   
+    window.location.reload(true)
   }
 
 }

@@ -13,6 +13,7 @@ export class DefaultComponent implements OnInit {
   constructor(private server:ServiceService) { }
 
   ngOnInit(): void {
+    
   }
 
   sideBar() {

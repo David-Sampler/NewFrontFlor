@@ -1,0 +1,41 @@
+<h1>Combo</h1>
+<mat-card class="example-card" style="background-color: rebeccapurple;">
+  
+
+    <mat-card-content >
+
+       <h4>Realizados {{totalAtual}} no mês {{dataatual}}  </h4>
+     
+        <h2>
+            <span style="font-size: 40px;">{{vendasTotal | currency: "R$"}}</span>
+        </h2>
+            
+        <h2>
+        </h2>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>
+<br/>
+<h1>Combo Mês Anterior</h1>
+<mat-card class="example-card" style="background-color: rebeccapurple;">
+  
+
+    <mat-card-content >
+
+       <h4>Realizados  {{TotalComboMesAnterior}} Combos no mês {{dataanterior.split('/')[0]}} </h4>
+     
+        <h2>
+            <span style="font-size: 40px;">{{VendasMesAnterior | currency: "R$"}}</span>
+        </h2>
+            
+        <h2>
+        </h2>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+</mat-card>

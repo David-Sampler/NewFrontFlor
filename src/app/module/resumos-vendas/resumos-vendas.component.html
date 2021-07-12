@@ -1,0 +1,19 @@
+<p>Detalhes</p>
+<div class="principal">
+    <div class="secudaria" >
+        <app-resumo-bronze [todos]='total' [quantidade]='bronzeMesAtual' [quantidadetotalAnterior] = 'MesPassadoBronze' 
+        [totalAnterior] = 'quantidadeAnterior'
+        ></app-resumo-bronze>
+    </div>
+    <br />
+    <div class="secudaria">
+        <app-resumo-combos [totalAtual]="totalCombos" [TotalComboMesAnterior] = "TotalComboMesAnterior" [vendasTotal]="vendaComboMesAtual" [VendasMesAnterior]= 'valorTotalMesAnterior'></app-resumo-combos>
+    </div>
+    <div class="secudaria">
+        <app-resumo-estetica-geral [totalMesAnterior] = 'vendasTotalEsteticaMesAnterior' [vendasGeral]="vendaEsteticageralMes" [ValorAnteriorEstetica]=valorTotalMesAnteriorEstetica></app-resumo-estetica-geral>
+    </div>
+
+    <br />
+
+</div>
+

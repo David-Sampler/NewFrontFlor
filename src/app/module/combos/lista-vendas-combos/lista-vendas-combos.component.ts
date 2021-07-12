@@ -41,6 +41,7 @@ export class ListaVendasCombosComponent implements OnInit {
 
     this.service.todosCombos().subscribe((result) => {
       this.todos = result.reverse()
+      
       this.todos.forEach((element: any) => {
         this.datas = element.criado.split('T')[0].split('-').reverse().join('/')
         console.log(this.datas)
@@ -52,9 +53,9 @@ export class ListaVendasCombosComponent implements OnInit {
 
 
   filtro() {
-    console.log(this.formulario.value.cliente)
+    
     this.service.filterCombo(this.formulario.value.cliente).subscribe((res) => {
-      this.lista = res.reverse()
+      this.todos = res.reverse()
     })
   }
 

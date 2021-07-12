@@ -1,0 +1,41 @@
+<h1>Vendas geral</h1>
+<mat-card class="example-card" style="background-color: rgb(67, 51, 83);">
+  
+
+    <mat-card-content>
+
+       <h4>Vendas na Estitica no mês {{dataatual}}  </h4>
+     
+        <h2>
+            <span style="font-size: 40px;">{{vendasGeral | currency:"R$"}}</span>
+        </h2>
+
+        <h2>
+        </h2>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="detalhesvendas()">Detalhes</button>
+       
+    </mat-card-actions>
+</mat-card>
+<br/>
+<h1>Vendas geral</h1>
+<mat-card class="example-card" style="background-color: rgb(67, 51, 83);">
+  
+
+    <mat-card-content>
+
+       <h4> Realizados {{totalMesAnterior}} Vendas na Estetica no mês {{dataanterior.split('/')[0]}}  </h4>
+     
+        <h2>
+            <span style="font-size: 40px;">{{ValorAnteriorEstetica | currency:"R$"}}</span>
+        </h2>
+
+        <h2>
+        </h2>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="detalhesvendas()">Detalhes</button>
+       
+    </mat-card-actions>
+</mat-card>

@@ -26,6 +26,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './guards/auth-guard.service';
+
 import { NgxMaskModule } from 'ngx-mask';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TokenInterceptorService } from '../app/guards/token-interceptor.service'
@@ -41,7 +42,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FinalizarComboComponent } from './module/combos/upload-combo/finalizar-combo/finalizar-combo.component';
 import { MatDialogRef} from '@angular/material/dialog';
 import { ListaclientesBronzeComponent } from './module/venda-bronze/listaclientes-bronze/listaclientes-bronze.component';
-import { DetalhesVendasComponent } from './module/vendas/detalhes-vendas/detalhes-vendas.component';
+import { ResumosVendasComponent } from './module/resumos-vendas/resumos-vendas.component';
+import {DetalhesVendasComponent} from './module/vendas/detalhes-vendas/detalhes-vendas.component';
+import { ResumoBronzeComponent } from './module/resumos-vendas/resumo-bronze/resumo-bronze.component'
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { ResumoCombosComponent } from './module/resumos-vendas/resumo-combos/resumo-combos.component';
+import { ResumoEsteticaGeralComponent } from './module/resumos-vendas/resumo-estetica-geral/resumo-estetica-geral.component';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -55,7 +64,11 @@ import { DetalhesVendasComponent } from './module/vendas/detalhes-vendas/detalhe
     UploadComboComponent,
     FinalizarComboComponent,
     ListaclientesBronzeComponent,
+    ResumosVendasComponent,
     DetalhesVendasComponent,
+    ResumoBronzeComponent,
+    ResumoCombosComponent,
+    ResumoEsteticaGeralComponent
     
   ],
   imports: [

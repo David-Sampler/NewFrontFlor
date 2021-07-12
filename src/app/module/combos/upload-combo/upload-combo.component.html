@@ -2,17 +2,20 @@
     <mat-accordion>
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Nome: {{cliente.cliente}}
+                <mat-panel-title style="display: flex;">
+                  <h4>Nome: {{cliente.cliente}}</h4>  
+                
                 </mat-panel-title>
                 <mat-panel-description style="display: flex; justify-content: space-between; ">
                     <p>Valor Total: R$ {{cliente.valorTotal}}</p>
-                    <p>Valor Entrada: R$ {{cliente.valorEntrada}}</p>
+                    <p>Telefone: {{cliente.contato}}</p>
+                    <p style="font-size: 15px;">Realizado em: <span >{{cliente.entradaParcelas[0].data.split('/')[1]}}/{{cliente.entradaParcelas[0].data.split('/')[0]}} </span> </p>
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <mat-chip-list aria-label="Fish selection">
+                <mat-chip style="background-color: rgb(243, 243, 243); font-size: 25px; color: rgb(68, 68, 68);" selected>Total: R$ {{cliente.valorTotal}}</mat-chip>
+                <mat-chip style="background-color: darkgreen;" selected>Entrada: R$ {{cliente.valorEntrada}}</mat-chip>
                 <mat-chip color="primary" selected>Débito: R$ {{cliente.valorDevedor}}</mat-chip>
-
             </mat-chip-list>
 
 

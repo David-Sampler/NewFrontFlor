@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ClientesComponent } from './module/clientes/clientes.component';
 import { CombosComponent } from './module/combos/combos.component';
 import { UploadComboComponent } from './module/combos/upload-combo/upload-combo.component';
+import { ResumosVendasComponent } from './module/resumos-vendas/resumos-vendas.component';
 import { VendaBronzeComponent } from './module/venda-bronze/venda-bronze.component';
 import { VendasComponent } from './module/vendas/vendas.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
@@ -38,6 +39,11 @@ const routes: Routes = [
   {
     path: "vendaCombos",
     component:CombosComponent
+  },
+
+  {
+    path: "DetalhesVendas",
+    component:ResumosVendasComponent
   },
 
   {
